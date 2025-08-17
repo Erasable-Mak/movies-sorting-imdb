@@ -174,7 +174,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍�� Author
 
-**Bhavna** - [GitHub Profile](https://github.com/Erasable-Mak)
+**Mohammad Ariz Khan** - [GitHub Profile](https://github.com/Erasable-Mak)
 
 ## �� Acknowledgments
 
