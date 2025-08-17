@@ -1,0 +1,188 @@
+npm install sequelize mssql
+npm install @types/sequelize @types/mssql --save-dev
+
+
+
+BHAVNACORP\Ariz.mohammad
+
+
+CREATE TABLE movies (
+    id INT PRIMARY KEY IDENTITY(1,1),
+    title NVARCHAR(255) NOT NULL,
+    genre NVARCHAR(100) NOT NULL,
+    rating FLOAT NOT NULL,
+    streamingLink NVARCHAR(255) NOT NULL
+);
+
+
+INSERT INTO Movies (title, genre, rating, streamingLink)
+VALUES ('Inception', 'Sci-Fi', 8.8, 'https://www.netflix.com/inception');
+
+SELECT * FROM Movies;
+
+
+================================================
+Admin:
+
+
+CREATE TABLE Admin (
+    username NVARCHAR(255),
+    pass NVARCHAR(255),
+);
+
+
+INSERT INTO Admin (username, pass)
+VALUES ('mak', '1234');
+
+CREATE TABLE admins (
+    id INT IDENTITY(1,1) PRIMARY KEY,   -- Auto-increment field for unique ID
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+
+
+
+salt crypoto
+http only cookie
+
+
+
+USE BhavnaMovieBonanza;
+GO
+
+SELECT name
+FROM sys.tables;
+
+
+SELECT * FROM Roles
+SELECT * FROM UserTable
+SELECT * FROM MoviesList
+SELECT * FROM PersonalMoviesList
+
+
+======================
+
+
+USE Movies;
+GO
+
+ALTER TABLE movies
+ADD user_id INT;
+
+ALTER TABLE movies
+ADD CONSTRAINT fk_movies_user_id
+FOREIGN KEY (user_id)
+REFERENCES users(id)
+ON DELETE CASCADE;
+============================
+
+
+
+
+
+BhavnaMovieBonanza
+==========================
+USE BhavnaMovieBonanza;
+GO
+
+CREATE TABLE Roles (
+    RoleId INT PRIMARY KEY,
+    RolesName NVARCHAR(255)
+		
+);
+
+INSERT INTO Roles (RoleId, RolesName)
+VALUES (1, 'Admin');
+INSERT INTO Roles (RoleId, RolesName)
+VALUES (2, 'User');
+
+-----------------------------------
+USE BhavnaMovieBonanza;
+GO
+
+CREATE TABLE UserTable (
+    UserId INT IDENTITY(1,1) PRIMARY KEY,
+    UserName NVARCHAR(255),
+	FirstName NVARCHAR(255),
+	LastName NVARCHAR(255),
+	Email NVARCHAR(255),
+	Password NVARCHAR(255)
+);
+
+INSERT INTO UserTable (UserName, FirstName, LastName, Email, Password)
+VALUES ('erasablemak', 'Erasable', 'Mak', 'mak@bhavnacorp.com', '$2y$08$wJCV.KdSLKlfmcb.mqDzu.wIgup/U79mAW9HiQ5m4920wuBxS95fa');
+-----------------------------------------------------------------------------------------------------------------
+USE BhavnaMovieBonanza;
+GO
+
+CREATE TABLE MoviesList (
+    MovieId INT IDENTITY(1,1) PRIMARY KEY,
+    Title NVARCHAR(255),
+	Description NVARCHAR(255),
+	Genre NVARCHAR(255),
+	ReleaseDate DATETIME
+);
+
+INSERT INTO MoviesList (Title, Description, Genre, ReleaseDate)
+VALUES ('Star Wars', 'Star Wars is a science fiction media franchise created by George Lucas', 'Action', '2025-03-21 15:30:00');
+-----------------------------------------------------------------------------------------------------------------------------------
+USE BhavnaMovieBonanza;
+GO
+
+CREATE TABLE PersonalMoviesList (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    UserId INT,
+    movieId INT,
+	Status NVARCHAR(255),
+	Rating INT
+);
+
+INSERT INTO PersonalMoviesList (UserId, movieId, Status, Rating)
+VALUES ( 1, 1, 'To-Watch', 5);
+----------------------------------------------------------------------------------------------------------------------------------
+USE BhavnaMovieBonanza;
+GO
+
+EXEC sp_rename 'PersonalMoviesList.movieId', 'MovieId', 'COLUMN';
+----------------------------------------------------------------------------------------------------------------------------------
+USE BhavnaMovieBonanza;
+GO
+
+CREATE TABLE RoleMatch (
+    Id INT IDENTITY(1,1),
+    RoleId INT,
+    UserId INT,
+	PRIMARY KEY (Id, RoleIden, UserIden)
+);
+
+INSERT INTO RoleMatch (RoleIden, UserIden)
+VALUES ( 1, 1);
+-------------------------------------------------------------------------------------------------------------------------------------
+If RoleId is intended to be the primary key of the RoleMatch table, you can add the primary key like this:
+
+ALTER TABLE RoleMatch
+ADD CONSTRAINT PK_RoleMatch PRIMARY KEY (RoleId);
+
+Or, if RoleId is not the primary key but just needs to be unique, you can add a unique constraint:
+
+ALTER TABLE RoleMatch
+ADD CONSTRAINT UQ_RoleMatch_RoleId UNIQUE (RoleId);
+----------------------------------------------------------------------------------------------------------------------------------------
+To check primary key:
+
+USE BhavnaMovieBonanza;
+GO
+
+--DROP TABLE Roles;
+
+SELECT COLUMN_NAME
+FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+WHERE TABLE_NAME = 'MoviesList' AND CONSTRAINT_NAME LIKE 'PK%';
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+if 
