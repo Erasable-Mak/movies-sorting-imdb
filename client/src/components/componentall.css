@@ -1,0 +1,535 @@
+/* General Layout */
+.App-header {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Table Styling */
+  .movie-table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table Header Styling */
+  .movie-table th, .movie-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .movie-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  /* Row Hover Effect */
+  .movie-table tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  /* Styling for Movie Links */
+  .watch-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .watch-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+  }
+  
+  /* Buttons Styling */
+  button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px; /* Adds space between buttons */
+  }
+  
+  button:last-child {
+    margin-right: 0; /* Removes margin from the last button */
+  }
+  
+  /* Add Movie Button */
+  button.bg-blue-500 {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  button.bg-blue-500:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Export to Excel Button */
+  button.bg-green-500 {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  button.bg-green-500:hover {
+    background-color: #218838;
+  }
+  
+  /* Logout Button */
+  button.bg-red-500 {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  button.bg-red-500:hover {
+    background-color: #c82333;
+  }
+  
+  /* Flex Container for Button Alignment */
+  .flex {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+  
+  .title {
+    text-align: center;  /* Centers text horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  
+
+  /* Login form CSS */
+
+  /* LoginForm.css */
+
+.login-container {
+  margin-top: 50px;
+}
+
+.form-title {
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.field-container {
+  margin-bottom: 15px;
+}
+
+
+/* logout button*/
+
+/* Add this to your CSS file (componentall.css or similar) */
+.logout-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+}
+
+
+/*button Update AND  delete in tasklist*/
+
+/* Add this to your componentall.css */
+.button-container {
+  display: flex;
+  gap: 10px; /* Add space between buttons */
+}
+
+
+
+/*Rating component in tasklist*/
+
+/* Star Rating Styles */
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+}
+
+.star-rating .star {
+  margin-right: 2px;
+  transition: color 0.2s;
+}
+
+.star-rating .star.filled {
+  color: gold;
+}
+
+.star-rating .star.empty {
+  color: #ccc;
+}
+
+.star-rating .star.editable {
+  cursor: pointer;
+}
+
+.star-rating .star.editable:hover {
+  transform: scale(1.2);
+}
+
+.rating-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rating-value {
+  font-size: 14px;
+  color: #666;
+}
+
+.rating-selector {
+  margin-bottom: 20px;
+}
+
+.rating-selected-value {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Table Styles */
+.movie-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.movie-table th, .movie-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.movie-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.movie-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Button Styles */
+.button-container {
+  display: flex;
+  gap: 8px;
+}
+
+.button-container button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-container button:first-child {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button-container button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.logout-btn {
+  position: absolute;
+  top: 0px; /* Changed from 20px to 10px to move it up */
+  right: 20px;
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.add-movie-btn {
+  padding: 10px 20px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.export-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  margin: 10px 0;
+}
+
+.dialog-content {
+  padding: 20px;
+  min-width: 400px;
+}
+
+.task-list-container {
+  padding: 20px;
+  position: relative;
+}
+
+
+
+
+/*admin page*/
+
+/* Star Rating Styles */
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+}
+
+.star-rating .star {
+  margin-right: 2px;
+}
+
+.star-rating .star.filled {
+  color: gold;
+}
+
+.star-rating .star.half {
+  color: gold;
+  position: relative;
+}
+
+.star-rating .star.half::after {
+  content: '☆';
+  position: absolute;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #ccc;
+}
+
+.star-rating .star.empty {
+  color: #ccc;
+}
+
+.rating-value {
+  margin-left: 5px;
+  font-size: 0.8em;
+  color: #666;
+}
+
+/* Admin Container */
+.admin-container {
+  padding: 20px;
+  position: relative;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.add-movie-btn {
+  padding: 10px 20px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.export-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Table Styles */
+.movie-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.movie-table th, .movie-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.movie-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.movie-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Logout Button */
+.logout-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  margin: 10px 0;
+}
+
+
+/*allmoviestoaddbyuser*/
+
+/* Movie Selection Container */
+.movie-selection-container {
+  padding: 20px;
+  position: relative;
+}
+
+/* Star Rating Styles */
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+}
+
+.star-rating .star {
+  margin-right: 2px;
+}
+
+.star-rating .star.filled {
+  color: gold;
+}
+
+.star-rating .star.half {
+  color: gold;
+  position: relative;
+}
+
+.star-rating .star.half::after {
+  content: '☆';
+  position: absolute;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #ccc;
+}
+
+.star-rating .star.empty {
+  color: #ccc;
+}
+
+.rating-value {
+  margin-left: 5px;
+  font-size: 0.8em;
+  color: #666;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.add-movies-btn {
+  padding: 10px 20px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.export-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Table Styles */
+.movie-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.movie-table th, .movie-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.movie-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.movie-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.movie-table input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Logout Button */
+.logout-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  margin: 10px 0;
+}
