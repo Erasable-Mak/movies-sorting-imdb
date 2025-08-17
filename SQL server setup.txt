@@ -181,8 +181,4 @@ FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
 WHERE TABLE_NAME = 'MoviesList' AND CONSTRAINT_NAME LIKE 'PK%';
 
 ----------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-if 
+ 
