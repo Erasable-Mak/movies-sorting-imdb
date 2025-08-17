@@ -96,3 +96,92 @@ A full-stack web application for managing and rating movies, built with React/Ty
    Frontend will be available at `http://localhost:5173`
 
 ## 📁 Project Structure
+
+Movies Site Project/
+├── client/ # React frontend
+│ ├── src/
+│ │ ├── components/ # React components
+│ │ ├── store/ # Redux store & slices
+│ │ ├── types/ # TypeScript type definitions
+│ │ └── App.tsx # Main application component
+│ ├── package.json # Frontend dependencies
+│ └── vite.config.ts # Vite configuration
+├── server/ # Flask backend
+│ ├── server.py # Main Flask application
+│ ├── instance/ # Database files
+│ └── requirements.txt # Python dependencies
+└── README.md # This file
+
+
+
+
+
+## �� API Endpoints
+
+### Authentication
+- `POST /signup` - User registration
+- `POST /login` - User authentication
+
+### Movies
+- `GET /allmovies` - Get user's personal movies (JWT required)
+- `GET /allmoviestoaddbyuser` - Get available movies to add (JWT required)
+- `POST /addmov` - Add movie to personal list (JWT required)
+- `POST /movies` - Add new movie to database (Admin only)
+- `PUT /movies/update/<id>` - Update movie status/rating (JWT required)
+- `DELETE /movies/delete/<id>` - Remove movie from personal list (JWT required)
+- `GET /movies/with_avg_rating` - Get all movies with average ratings (JWT required)
+
+## ��️ Database Schema
+
+The application uses several key tables:
+- **UserTable** - User accounts and credentials
+- **MoviesList** - Master list of all movies
+- **PersonalMoviesList** - User-specific movie collections
+- **MovieAverageRatings** - Calculated average ratings
+- **Roles** & **RoleMatch** - User role management
+
+## 🔒 Security Features
+
+- JWT token-based authentication
+- Password hashing with Werkzeug
+- Role-based access control
+- CORS protection
+- SQL injection prevention with parameterized queries
+
+## 🚧 Development
+
+### Running in Development Mode
+- Backend: `python server.py` (debug mode enabled)
+- Frontend: `npm run dev` (hot reload enabled)
+
+### Building for Production
+```bash
+cd client
+npm run build
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍�� Author
+
+**Bhavna** - [GitHub Profile](https://github.com/Erasable-Mak)
+
+## �� Acknowledgments
+
+- Flask community for the excellent web framework
+- React team for the powerful frontend library
+- SQL Server community for database support
+
+---
+
+⭐ **Star this repository if you find it helpful!**
